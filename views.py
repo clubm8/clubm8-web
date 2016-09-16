@@ -1,3 +1,7 @@
 from django.shortcuts import render
+from django.views import generic
 
-# Create your views here.
+from clubm8core import models
+
+class IndexView(generic.TemplateView):
+    template_name = 'clubm8web/index.html'
