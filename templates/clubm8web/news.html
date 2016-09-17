@@ -1,0 +1,22 @@
+{% extends 'clubm8web/base.html' %}
+
+{% block title %}Clubm8 News{% endblock %}
+
+{% block content %}
+
+<h1>NEWS</h1>
+{% if object_list|length %}
+    {% for news in object_list %}
+    <div class="row">
+      <div class="col-lg-12">
+        <h2>{{ news.title }}</h2>
+        <h4>{{ news.author }}, {{ news.date }} - {{ news.time }}</h4>
+        <p>{{ news.text }}</p>
+      </div>
+    </div>
+    {% endfor %}
+{% else %}
+  <p>NO NEWS FOUND YO</p>
+{% endif %}
+
+{% endblock %}

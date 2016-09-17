@@ -7,3 +7,8 @@ class IndexView(generic.ListView):
     template_name = 'clubm8web/index.html'
 
     model = models.Slot
+
+class NewsView(generic.ListView):
+    template_name = 'clubm8web/news.html'
+
+    model = models.News

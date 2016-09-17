@@ -7,4 +7,7 @@ urlpatterns = [
     url(r'^$',
         views.IndexView.as_view(),
         name='index'),
+    url(r'^news/$',
+        views.NewsView.as_view(),
+        name='news'),
 ]

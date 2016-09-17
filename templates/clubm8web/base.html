@@ -2,7 +2,7 @@
 
 {# Load the tag library #}
 {% load bootstrap3 %}
-
+{% load static %}
 
 
 <!DOCTYPE html>
@@ -42,7 +42,7 @@
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
                 <li class="sidebar-brand">
-                    <a href="#">
+                    <a href="/">
                         <img src="{% static "img/klubM8_logo.svg" %}" alt="CLUBM8"/>
                     </a>
                 </li>
@@ -50,7 +50,7 @@
                     <a href="#">Events</a>
                 </li>
                 <li>
-                    <a href="#">About</a>
+                    <a href="/news">News</a>
                 </li>
                 <li>
                     <a href="#">Services</a>
@@ -62,14 +62,18 @@
         </div>
         <!-- /#sidebar-wrapper -->
 
+        <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
+
         <!-- Page Content -->
         <div id="page-content-wrapper">
 
           {# Display django.contrib.messages as Bootstrap alerts #}
           {% bootstrap_messages %}
 
+          <div class="container-fluid">
           {% block content %}
           {% endblock %}
+          </div>
 
         </div>
         <!-- /#page-content-wrapper -->
