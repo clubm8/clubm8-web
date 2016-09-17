@@ -13,4 +13,7 @@ urlpatterns = [
     url(r'^events/$',
         views.IndexView.as_view(),
         name='index'),
+    url(r'^specials/$',
+        views.SpecialsView.as_view(),
+        name='specials'),
 ]

@@ -6,7 +6,7 @@
 
 <h1>NEWS</h1>
 {% if object_list|length %}
-    {% for news in object_list %}
+    {% for news in object_list|dictsortreversed:"date" %}
     <div class="row">
       <div class="col-lg-12">
         <h2>{{ news.title }}</h2>
