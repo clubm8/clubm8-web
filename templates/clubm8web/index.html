@@ -8,6 +8,16 @@ blob!!
 {% load static %}
 <img src="{% static "img/klubM8_logo.svg" %}" alt="CLUBM8"/>
 
-SLOTS:  {{ object_list|length }}
+<p>SLOTS</p>
+{% if object_list|length %}
+  <ul>
+    {% for slot in object_list %}
+      <li>Woche vom {{ slot.start }}: {{ slot.plan.name }}</li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p>NO SLOTS FOUND YO</p>
+{% endif %}
+
 
 {% endblock %}
