@@ -1,16 +1,28 @@
 {% extends 'clubm8web/base.html' %}
+{% load bootstrap3 %}
 
 {% block title %}Clubm8 Index{% endblock %}
 
 {% block content %}
 
-<h1>Slots</h1>
+<h1>Events</h1>
 
 {% if object_list|length %}
   {% for slot in object_list %}
     <div class="row slots">
       <div class="col-lg-12">
         <h4><span class="text-muted">Woche vom {{ slot.start }}:</span> <span class="planname">{{ slot.plan.name }}</span></h4>
+
+        {% if slot.special_events|length %}
+        {% for special in slot.special_events %}
+          <div class="row event text-primary">
+            <div class="col-lg-12">
+              {% bootstrap_icon "exclamation-sign" %}
+              {{ special.date }}: <span class="name">{{ special.occurence.event.name }}</span> ({{ special.occurence.event.location }}, {{ special.occurence.start }})
+            </div>
+          </div>
+        {% endfor %}
+        {% endif %}
 
         {% if slot.plan.occurence.all|length %}
           {% for occurence in slot.plan.occurence.all|dictsort:"weekday" %}

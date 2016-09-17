@@ -7,6 +7,7 @@ from clubm8core import models
 class IndexView(generic.ListView):
     template_name = 'clubm8web/index.html'
 
+    # TODO maybe only slots in the future?
     model = models.Slot
 
 class NewsView(generic.ListView):
