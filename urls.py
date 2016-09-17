@@ -10,4 +10,7 @@ urlpatterns = [
     url(r'^news/$',
         views.NewsView.as_view(),
         name='news'),
+    url(r'^events/$',
+        views.IndexView.as_view(),
+        name='index'),
 ]

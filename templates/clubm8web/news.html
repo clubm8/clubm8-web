@@ -10,8 +10,8 @@
     <div class="row">
       <div class="col-lg-12">
         <h2>{{ news.title }}</h2>
-        <h4>{{ news.author }}, {{ news.date }} - {{ news.time }}</h4>
-        <p>{{ news.text }}</p>
+        <p class="text-muted">{{ news.author }}, {{ news.date }} - {{ news.time }}</p>
+        <p>{{ news.text|linebreaksbr }}</p>
       </div>
     </div>
     {% endfor %}

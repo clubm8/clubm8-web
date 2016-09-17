@@ -8,14 +8,21 @@
 
 {% if object_list|length %}
   {% for slot in object_list %}
-    <div class="row">
+    <div class="row slots">
       <div class="col-lg-12">
-        <h4>Woche vom {{ slot.start }}: {{ slot.plan.name }}</h4>
+        <h4><span class="text-muted">Woche vom {{ slot.start }}:</span> <span class="planname">{{ slot.plan.name }}</span></h4>
 
         {% if slot.plan.occurence.all|length %}
           {% for occurence in slot.plan.occurence.all|dictsort:"weekday" %}
             <div class="row event">
-              <div class="col-lg-12">{{ occurence.weekday_str }}: {{ occurence.event.name }} @ {{ occurence.event.location }} # {{ occurence.start }}</div>
+              <div class="col-lg-12">
+                <span class="weekday">
+                {% ifchanged occurence.weekday %}
+                  {{ occurence.weekday_str }}
+                {% endifchanged %}
+                </span>
+                <span class="name">{{ occurence.event.name }}</span> ({{ occurence.event.location }}, {{ occurence.start }})
+              </div>
             </div>
           {% endfor %}
         {% endif %}

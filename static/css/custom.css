@@ -3,3 +3,21 @@
   margin-bottom: 10px;
   margin-top: 10px;
 }
+
+.event span.weekday {
+  width: 40px;
+  display: inline-block;
+  margin-top: 5px;
+}
+
+.event span.name {
+  font-weight: bold;
+}
+
+span.planname {
+  font-weight: bold;
+}
+
+.slots h4 {
+  margin-top: 30px;
+}
